@@ -66,12 +66,12 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #137296;
+    background-color: black;
     clear: both;
-    color: #333;
+    color: white;
     text-align: center;
     padding: 5px 0;
-    margin-top: 200px;
+    margin-top: 20px;
 
 }
 
@@ -80,7 +80,7 @@ nav ul li a.activo {
 }
 
 .holder {
-    max-width: 960px;
+    max-width: 1000px;
     margin: 0 0 0 0;
     overflow: hidden;
 }

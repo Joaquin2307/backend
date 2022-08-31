@@ -1,12 +1,5 @@
-<div class="container" style="margin:50px auto">
-    <div class="row">
-        <div class="col">
-            <p class="text-right">Hola {{ usuario}}
-                <a href="/admin/login/logout" clas="btn btn-sm btn-danger">Cerrar sesion<i
-                        class="fa fa-sign-out"></i></a>
-            </p>
-        </div>
-    </div>
+<div class="container" style=" margin:150px auto">
+  
     <div class="row">
         <div class="col-7">
             <h3>Listado de novedades</h3>
@@ -23,31 +16,30 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titulo</th>
+                    <th scope="col">Imagen</th>
                     <th scope="col" class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
+                 {{#each novedades}}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>va el titulo</td>
+                    <th scope="row">{{id}}</th>
+                    <td>{{titulo}} </td>
+                    <td>{{{imagen}}}</td>
                     <td class="text-center">
-                        <a href="#" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
-                        <a href="#" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
+                        <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
 </div>
-<tbody>
-    {{#each novedades}}
-    <tr>
-        <th scope="row">{{id}}</th>
-        <td>{{titulo}}</td>
-        <td class="text-center">
-            <a href="/admin/novedades/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
-            <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
-        </td>
-    </tr>
-    {{/each}}
-</tbody>
+
+  <div class="row">
+        <div class="col">
+            <p class="text-end">Hola {{ usuario }} <a href="/admin/login/logout" clas="btn btn-sm btn-danger">Cerrar sesion<i class="fas fa-sign-out-alt"></i></a>
+            </p>
+        </div>
+    </div>
